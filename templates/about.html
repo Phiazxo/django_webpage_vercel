@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{%block title %} 
+    ประวัติส่วนตัว 
+{% endblock %} 
+
+{% block content %}
+<!-- Content Row -->
+
+<div class="row">
+  <!-- Personal Information -->
+  <div class="col-lg-6 mb-4">
+    <!-- Basic Card -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลส่วนตัว</h6>
+      </div>
+      <div class="card-body">
+        <p><strong>ชื่อ:</strong> Prasopphol Talhom</p>
+        <p><strong>ชื่อเล่น:</strong> Phi</p>
+        <p><strong>เกิดวันที่:</strong> 32 เดือนมกราคม 2570</p>
+        <p><strong>อายุ:</strong> 7 ปี</p>
+      </div>
+    </div>
+
+    <!-- Biography -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ประวัติโดยย่อ</h6>
+      </div>
+      <div class="card-body">
+        <p>
+          Phi
+          เป็นนักศึกษาปริญญาตรีสาขาวิทยาการคอมพิวเตอร์ที่มหาวิทยาลัยราชภัฏศรีสะเกษ
+          มีความสนใจในการพัฒนาซอฟต์แวร์ มีทักษะในการเขียนโปรแกรมด้วย Python,
+          JavaScript และใช้งานฐานข้อมูล MySQL และ MongoDB
+          อีกทั้งยังมีความชำนาญในการใช้ Flask, Django, และ Bootstrap
+          เป็นเฟรมเวิร์ก
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="col-lg-6 mb-4">
+    <!-- Education Card -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">กำลังศึกษา</h6>
+      </div>
+      <div class="card-body">
+        <p>
+          <strong>ปริญญาตรี สาขาวิชาวิทยาการคอมพิวเตอร์</strong><br />
+          <small>มหาวิทยาลัยราชภัฏศรีสะเกษ</small>
+        </p>
+        <p>กำลังศึกษาอยู่ในชั้นปีที่ 2</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ทักษะ</h6>
+      </div>
+      <div class="card-body">
+        <p><strong>โปรแกรม:</strong> Python, JavaScript, HTML/CSS</p>
+        <p><strong>ฐานข้อมูล:</strong> MySQL, MongoDB</p>
+        <p><strong>เฟรมเวิร์ก:</strong> Flask, Django, Bootstrap</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+{% endblock %}

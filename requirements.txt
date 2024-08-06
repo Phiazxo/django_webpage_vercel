@@ -1,0 +1,17 @@
+asgiref
+Django
+pycodestyle
+sqlparse
+tomli
+djangorestframework
+psycopg2-binary
+mysqlclient
+gunicorn
+whitenoise
+autopep8
+django-environ
+django-cors-headers
+django-filter
+pytest
+pytest-django
+django-extensions

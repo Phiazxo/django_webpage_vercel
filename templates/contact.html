@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    ติดต่อ
+{% endblock %}
+
+{% block content %}
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Contact Form Column -->
+    <div class="col-lg-6 mb-4">
+
+        <!-- Contact Form Card -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ติดต่อ</h6>
+            </div>
+            <div class="card-body">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">ชื่อ-สกุล</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">ข้อความ</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Information and Social Buttons Column -->
+    <div class="col-lg-6 mb-4">
+
+        <!-- Contact Information Card -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ข้อมูลติดต่อ</h6>
+            </div>
+            <div class="card-body">
+                <p><strong>อีเมล:</strong> <span>example@example.com</span></p>
+                <p><strong>โทรศัพท์:</strong> 012-345-6789</p>
+                <p><strong>ที่อยู่:</strong> 123/4 ถนนสุขุมวิท, กรุงเทพฯ</p>
+                
+                <!-- Social Buttons with custom colors -->
+                <div class="social-buttons mt-4">
+                    <a href="https://www.facebook.com/example1" target="_blank" class="social-button facebook btn btn-primary">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://discord.gg/example" target="_blank" class="social-button discord btn btn-info">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                    <a href="https://line.me/ti/p/example" target="_blank" class="social-button line btn btn-success">
+                        <i class="fab fa-line"></i> Line
+                    </a>
+                    <a href="https://github.com/example111111015649120234150412" target="_blank" class="social-button github btn btn-dark">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.youtube.com/channel/example" target="_blank" class="social-button youtube btn btn-danger">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Include existing content here -->
+
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}
