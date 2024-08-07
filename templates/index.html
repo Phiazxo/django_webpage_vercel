@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="container-fluid p-0">
   <div id="hero-section" class="hero-section">
       <div class="hero-content">
@@ -9,34 +10,6 @@
       </div>
   </div>
 </div>
+
 {% endblock %}
 
-{% block styles %}
-<style>
-  .hero-section {
-      background-image: url('path_to_your_background_image.jpg'); /* เปลี่ยน path_to_your_background_image.jpg เป็นที่อยู่ของภาพพื้นหลังของคุณ */
-      background-size: cover;
-      background-position: center;
-      height: 500px; /* ปรับความสูงตามที่ต้องการ */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff; /* สีของข้อความ */
-      text-align: center;
-  }
-
-  .hero-content {
-      max-width: 600px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังของข้อความ */
-  }
-
-  .hero-content h1 {
-      font-size: 3rem;
-  }
-
-  .hero-content p {
-      font-size: 1.5rem;
-  }
-</style>
-{% endblock %}
