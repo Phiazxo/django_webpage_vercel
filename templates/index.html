@@ -1,145 +1,42 @@
 {% extends 'base.html' %}
 
-{% block title %} 
-    หน้าแรก 
+{% block content %}
+<div class="container-fluid p-0">
+  <div id="hero-section" class="hero-section">
+      <div class="hero-content">
+          <h1 class="display-4 text-center">Welcome to My Website</h1>
+          <p class="lead text-center">Have fun browsing the website!</p>
+      </div>
+  </div>
+</div>
 {% endblock %}
 
-{% block content %}
-<!-- Content Row -->
-<div class="row">
-  <!-- Monthly Earnings Card -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              รายได้ (เดือนล่าสุด)
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-            <p class="mt-2 mb-0 text-gray-500">ข้อมูลนี้แสดงรายได้ที่ได้รับในเดือนล่าสุด ซึ่งเป็นผลรวมของทุกแหล่งรายได้ที่บริษัทได้รับในเดือนที่ผ่านมา.</p>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{% block styles %}
+<style>
+  .hero-section {
+      background-image: url('path_to_your_background_image.jpg'); /* เปลี่ยน path_to_your_background_image.jpg เป็นที่อยู่ของภาพพื้นหลังของคุณ */
+      background-size: cover;
+      background-position: center;
+      height: 500px; /* ปรับความสูงตามที่ต้องการ */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff; /* สีของข้อความ */
+      text-align: center;
+  }
 
-  <!-- Annual Earnings Card -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-success shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-              รายได้ (รายปี)
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-            <p class="mt-2 mb-0 text-gray-500">รายได้รวมที่ได้รับตลอดทั้งปีซึ่งแสดงถึงผลกำไรทั้งหมดก่อนหักค่าใช้จ่ายและภาษี.</p>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  .hero-content {
+      max-width: 600px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังของข้อความ */
+  }
 
-  <!-- Tasks Card -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-info shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-              งานที่ต้องทำ
-            </div>
-            <div class="row no-gutters align-items-center">
-              <div class="col-auto">
-                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                  50%
-                </div>
-              </div>
-              <div class="col">
-                <div class="progress progress-sm mr-2">
-                  <div
-                    class="progress-bar bg-info"
-                    role="progressbar"
-                    style="width: 50%"
-                    aria-valuenow="50"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <p class="mt-2 mb-0 text-gray-500">ข้อมูลนี้แสดงถึงเปอร์เซ็นต์ของงานที่เสร็จสมบูรณ์จากทั้งหมดที่มอบหมายไว้. ขณะนี้งานยังอยู่ในขั้นตอนการดำเนินการ.</p>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  .hero-content h1 {
+      font-size: 3rem;
+  }
 
-  <!-- Pending Requests Card -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-              คำขอที่รอดำเนินการ
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-            <p class="mt-2 mb-0 text-gray-500">จำนวนคำขอที่อยู่ระหว่างการพิจารณาหรือรอการตอบกลับ. รวมถึงคำขอที่เกี่ยวข้องกับการสนับสนุนลูกค้าและการสอบถามต่าง ๆ.</p>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-comments fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /.row -->
-
-<!-- Additional Content Row -->
-<div class="row">
-  <!-- Recent Activities Card -->
-  <div class="col-xl-6 col-md-12 mb-4">
-    <div class="card shadow h-100 py-2">
-      <div class="card-body">
-        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-          กิจกรรมล่าสุด
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">การประชุมกับทีมพัฒนาเพื่อหารือเกี่ยวกับโครงการใหม่</li>
-          <li class="list-group-item">การตรวจสอบรายงานการขายประจำเดือน</li>
-          <li class="list-group-item">การประชุมวางแผนการตลาดสำหรับไตรมาสหน้า</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Recent Notifications Card -->
-  <div class="col-xl-6 col-md-12 mb-4">
-    <div class="card shadow h-100 py-2">
-      <div class="card-body">
-        <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-          การแจ้งเตือนล่าสุด
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">มีการอัปเดตสำคัญในระบบการจัดการภายใน</li>
-          <li class="list-group-item">การแจ้งเตือนเกี่ยวกับปัญหาด้านความปลอดภัยของข้อมูล</li>
-          <li class="list-group-item">การแจ้งเตือนเรื่องการประชุมที่ต้องเข้าร่วม</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /.row -->
+  .hero-content p {
+      font-size: 1.5rem;
+  }
+</style>
 {% endblock %}
