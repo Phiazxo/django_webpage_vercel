@@ -36,14 +36,13 @@ def forPage(request):
 
 def cardPage(request):
     cards = []
-    base_url = 'https://static.wikia.nocookie.net/ultra/images/4/4d/EMI_104.png/revision/latest/thumbnail/width/360/height/360?cb=20240615095817'
+    base_url = 'https://images.pexels.com/photos/12475794/pexels-photo-12475794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     
     for i in range(1, 101):
         image_url = f'{base_url}&{i}'
         card = {
             'image_url': image_url,
-            'title': f'Card Emi {i}',
-            'description': f'Emi (エミ, Emi) is a Gigantron hatchling and later the foster child of Ultraman/Ken Sato, who attempts to protect her from the machinations of the conniving KDF in Ultraman: Rising.',
+            'title': f'Card Dogs {i}',
             'link': f'#card-{i}'
         }
         cards.append(card)
@@ -52,3 +51,4 @@ def cardPage(request):
         'cards': cards
     }
     return render(request, 'card.html', context)
+
