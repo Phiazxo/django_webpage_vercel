@@ -52,3 +52,13 @@ def cardPage(request):
     }
     return render(request, 'card.html', context)
 
+def cardcolorPage(request):
+    context = {
+        'color': 'All',
+    }
+
+    if request.method == "GET" and request.GET.get('color') != None:
+        context['color'] = request.GET.get('color')
+
+    return render(request, 'card_color.html', context)
+

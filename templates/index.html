@@ -2,14 +2,55 @@
 
 {% block content %}
 
-<div class="container-fluid p-0">
-  <div id="hero-section" class="hero-section">
-      <div class="hero-content">
-          <h1 class="display-4 text-center">Welcome to My Website</h1>
-          <p class="lead text-center">Have fun browsing the website!</p>
+<div class="container-fluid p-0" style="padding: 0; background: transparent;">
+  <div id="hero-section" class="hero-section" style="
+      color: black; /* ข้อความสีดำ */
+      height: 100vh; /* ความสูงเต็มหน้าจอ */
+      display: flex; /* ใช้ Flexbox สำหรับการจัดตำแหน่ง */
+      align-items: flex-start; /* จัดตำแหน่งให้เริ่มต้นที่ด้านบน */
+      justify-content: center; /* จัดตำแหน่งแนวนอน */
+      text-align: center; /* จัดตำแหน่งข้อความ */
+      padding: 50px 20px; /* เพิ่มการเว้นขอบด้านข้างและด้านบน */
+      position: relative; /* ใช้ตำแหน่งสัมพัทธ์ */
+      overflow: hidden; /* ซ่อนเนื้อหาที่ล้นออกมา */
+      background: transparent; /* ไม่มีพื้นหลัง */
+  ">
+      <div class="hero-content" style="
+          max-width: 800px; /* จำกัดความกว้างของเนื้อหา */
+          position: relative; /* ใช้ตำแหน่งสัมพัทธ์สำหรับอนิเมชั่น */
+      ">
+          <h1 style="
+              font-size: 4rem; /* ขนาดตัวอักษรใหญ่ */
+              font-weight: 700; /* ตัวหนา */
+              margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+              opacity: 0; /* เริ่มต้นที่โปร่งแสง */
+              animation: fadeInUp 2s forwards; /* ใช้การอนิเมชั่น */
+              transform: translateY(10px); /* ขยับขึ้นจากตำแหน่งปกติ */
+          ">Welcome to My Website</h1>
+          <p style="
+              font-size: 1.5rem; /* ขนาดตัวอักษรกลาง */
+              font-weight: 300; /* ตัวบาง */
+              opacity: 0; /* เริ่มต้นที่โปร่งแสง */
+              animation: fadeInUp 2s 1s forwards; /* ใช้การอนิเมชั่นพร้อมการหน่วงเวลา */
+              transform: translateY(10px); /* ขยับขึ้นจากตำแหน่งปกติ */
+          ">Have fun browsing the website!</p>
       </div>
   </div>
+
+  <style>
+    /* Keyframes สำหรับอนิเมชั่นการเลือนลางและเลื่อนขึ้น */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* เริ่มต้นที่ต่ำกว่า */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0); /* ย้ายไปยังตำแหน่งปกติ */
+        }
+    }
+  </style>
+  
 </div>
 
 {% endblock %}
-

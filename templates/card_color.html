@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <h1 class="text-center">{{ color }}</h1>
+  
+  <!-- ตัวกรองสี -->
+  <div class="row mb-4">
+    <div class="col text-center">
+        <a class="btn btn-secondary text-light" href="?color=All">ทั้งหมด</a>
+        <a class="btn btn-danger text-light mx-2" href="?color=Red">สีแดง</a>
+        <a class="btn btn-warning text-dark mx-2" href="?color=Yellow">สีเหลือง</a>
+        <a class="btn btn-primary text-light mx-2" href="?color=Blue">สีน้ำเงิน</a>
+        <a class="btn btn-success text-light mx-2" href="?color=Green">สีเขียว</a>
+    </div>
+  </div>
+
+  <!-- การแสดงการ์ด -->
+  <div class="row">
+    {% if color == 'All' or color == 'Red' %}
+    <div class="col-md-4 mb-4">
+      <div class="card bg-danger text-light">
+        <div class="card-header bg-danger text-light">สีแดง</div>
+        <div class="card-body">
+          <h5 class="card-title text-light">Danger Card Title</h5>
+          <p class="card-text text-light">This is a red card with some quick example text to build on the card title.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if color == 'All' or color == 'Yellow' %}
+    <div class="col-md-4 mb-4">
+      <div class="card bg-warning text-dark">
+        <div class="card-header bg-warning text-dark">สีเหลือง</div>
+        <div class="card-body">
+          <h5 class="card-title">Warning Card Title</h5>
+          <p class="card-text text-dark">This is a yellow card with some quick example text to build on the card title.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if color == 'All' or color == 'Blue' %}
+    <div class="col-md-4 mb-4">
+      <div class="card bg-primary text-light">
+        <div class="card-header bg-primary text-light">สีน้ำเงิน</div>
+        <div class="card-body">
+          <h5 class="card-title text-light">Primary Card Title</h5>
+          <p class="card-text text-light">This is a blue card with some quick example text to build on the card title.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if color == 'All' or color == 'Green' %}
+    <div class="col-md-4 mb-4">
+      <div class="card bg-success text-light">
+        <div class="card-header bg-success text-light">สีเขียว</div>
+        <div class="card-body">
+          <h5 class="card-title text-light">Success Card Title</h5>
+          <p class="card-text text-light">This is a green card with some quick example text to build on the card title.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
