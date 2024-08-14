@@ -5,12 +5,12 @@
 <div class="container my-4">
   <div class="row">
     {% for card in cards %}
-    <div class="col-md-4 mb-4">
+    <div class="col-md-3 mb-3">
       <div class="card" style="width: 18rem;">
         <img src="{{ card.image_url }}" class="card-img-top img-fluid" alt="{{ card.title }}">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
-          <footer class="blockquote-footer">Originated from wild animals  Known as wolves, which lived in forests during prehistoric times, approximately 20,000-40,000 years ago.</footer>
+          <footer class="m">Originated from wild animals  Known as wolves, which lived in forests during prehistoric times, approximately 20,000-40,000 years ago.</footer>
         </div>
       </div>
     </div>
