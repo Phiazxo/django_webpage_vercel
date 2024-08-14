@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 def indexPage(request):
     return render(request, "index.html")
@@ -62,3 +65,14 @@ def cardcolorPage(request):
 
     return render(request, 'card_color.html', context)
 
+def formPage(request):
+    return render(request, 'form.html')
+
+@csrf_exempt
+def submit_registration(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        # ทำการบันทึกข้อมูลลงฐานข้อมูลหรือประมวลผลตามต้องการ
+        # ตัวอย่างการตอบกลับ
+        return JsonResponse({'status': 'success', 'message': 'บันทึกข้อมูลเรียบร้อยแล้ว'})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})

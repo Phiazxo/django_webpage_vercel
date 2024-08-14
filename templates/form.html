@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="app" class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">แบบฟอร์มลงทะเบียน</h2>
+                    <form @submit.prevent="submitForm" v-if="!formSubmitted">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">ชื่อ</label>
+                                <input type="text" class="form-control" id="firstName" v-model="firstName" required>
+                                <div class="invalid-feedback" v-if="!isValidFirstName">กรุณากรอกชื่อ</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">นามสกุล</label>
+                                <input type="text" class="form-control" id="lastName" v-model="lastName" required>
+                                <div class="invalid-feedback" v-if="!isValidLastName">กรุณากรอกนามสกุล</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">อีเมล</label>
+                                <input type="email" class="form-control" id="email" v-model="email" required>
+                                <div class="invalid-feedback" v-if="!isValidEmail">กรุณากรอกอีเมลที่ถูกต้อง</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">รหัสผ่าน</label>
+                                <input type="password" class="form-control" id="password" v-model="password" required>
+                                <div class="invalid-feedback" v-if="!isValidPassword">รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="address" class="form-label">ที่อยู่</label>
+                                <textarea class="form-control" id="address" v-model="address" rows="3" required></textarea>
+                                <div class="invalid-feedback" v-if="!isValidAddress">กรุณากรอกที่อยู่</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="birthdate" class="form-label">วันเดือนปีเกิด</label>
+                                <input type="date" class="form-control" id="birthdate" v-model="birthdate" required>
+                                <div class="invalid-feedback" v-if="!isValidBirthdate">กรุณาเลือกวันเดือนปีเกิด</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">เบอร์โทรศัพท์</label>
+                                <input type="tel" class="form-control" id="phone" v-model="phone" required>
+                                <div class="invalid-feedback" v-if="!isValidPhone">กรุณากรอกเบอร์โทรศัพท์ที่ถูกต้อง</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">ลงทะเบียน</button>
+                        </div>
+                    </form>
+
+                    <div v-if="formSubmitted" class="mt-4">
+                        <h3 class="text-center mb-4">สรุปข้อมูลการลงทะเบียน</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>ชื่อ:</strong> [[ firstName ]]</li>
+                            <li class="list-group-item"><strong>นามสกุล:</strong> [[ lastName ]]</li>
+                            <li class="list-group-item"><strong>อีเมล:</strong> [[ email ]]</li>
+                            <li class="list-group-item"><strong>ที่อยู่:</strong> [[ address ]]</li>
+                            <li class="list-group-item"><strong>เบอร์โทรศัพท์:</strong> [[ phone ]]</li>
+                            <li class="list-group-item"><strong>วันเดือนปีเกิด:</strong> [[ birthdate ]]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    delimiters: ['[[', ']]'],
+    data: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        address: '',
+        phone: '',
+        birthdate: '',
+        formSubmitted: false
+    },
+    computed: {
+        isValidFirstName() {
+            return this.firstName.length > 0;
+        },
+        isValidLastName() {
+            return this.lastName.length > 0;
+        },
+        isValidEmail() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(this.email);
+        },
+        isValidPassword() {
+            return this.password.length >= 8;
+        },
+        isValidAddress() {
+            return this.address.length > 0;
+        },
+        isValidPhone() {
+            const phoneRegex = /^[0-9]{10}$/;
+            return phoneRegex.test(this.phone);
+        },
+        isValidBirthdate() {
+            return this.birthdate !== '';
+        }
+    },
+    methods: {
+        submitForm() {
+            if (this.isValidFirstName && this.isValidLastName && this.isValidEmail &&
+                this.isValidPassword && this.isValidAddress && this.isValidPhone && this.isValidBirthdate) {
+                this.formSubmitted = true;
+                // ส่งข้อมูลไปยัง Django backend ที่นี่
+            } else {
+                alert('กรุณากรอกข้อมูลให้ถูกต้องครบถ้วน');
+            }
+        }
+    }
+});
+</script>
+{% endblock %}

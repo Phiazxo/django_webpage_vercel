@@ -8,4 +8,5 @@ urlpatterns = [
     path("for/", views.forPage, name='for'),
     path("card/", views.cardPage, name='card'),
     path("card_color/", views.cardcolorPage, name='card_color'),
+    path("form/", views.formPage, name='form'),
 ]
