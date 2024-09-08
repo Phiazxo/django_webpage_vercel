@@ -111,12 +111,17 @@ new Vue({
             if (this.isValidFirstName && this.isValidLastName && this.isValidEmail &&
                 this.isValidPassword && this.isValidAddress && this.isValidPhone && this.isValidBirthdate) {
                 this.formSubmitted = true;
-                // ส่งข้อมูลไปยัง Django backend ที่นี่
+    
+                // ส่งข้อมูลไปยัง Django backend ที่นี่ (ถ้ามี)
+    
+                // ใช้ Django template tag {% url 'index' %} เพื่อ redirect
+                const redirectUrl = "{% url 'index' %}";  // Django จะ render URL ตรงนี้ก่อนส่งไปยังฝั่งผู้ใช้
+                window.location.href = redirectUrl;
             } else {
                 alert('กรุณากรอกข้อมูลให้ถูกต้องครบถ้วน');
             }
         }
-    }
+    }    
 });
 </script>
 {% endblock %}

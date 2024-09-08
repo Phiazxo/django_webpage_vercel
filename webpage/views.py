@@ -76,3 +76,45 @@ def submit_registration(request):
         # ตัวอย่างการตอบกลับ
         return JsonResponse({'status': 'success', 'message': 'บันทึกข้อมูลเรียบร้อยแล้ว'})
     return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+def detallPage(request):
+    return render(request, "detall.html")
+
+def buttonsPage(request):
+    return render(request, "buttons.html")
+
+def cardsPage(request):
+    return render(request, "cards.html")
+
+def colorsPage(request):
+    return render(request, "colors.html")
+
+def bordersPage(request):
+    return render(request, "borders.html")
+
+def animationsPage(request):
+    return render(request, "animations.html")
+
+def otherPage(request):
+    return render(request, "other.html")
+
+def loginPage(request):
+    return render(request, "login.html")
+
+def registerPage(request):
+    return render(request, "register.html")
+
+def forgot_passwordPage(request):
+    return render(request, "forgot_password.html")
+
+def errorPage(request):
+    return render(request, "404_page.html")
+
+def blankPage(request):
+    return render(request, "blank_page.html")
+
+def chartsPage(request):
+    return render(request, "charts.html")
+
+def tablesPage(request):
+    return render(request, "tables.html")
